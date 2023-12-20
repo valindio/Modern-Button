@@ -1,5 +1,12 @@
+:root {
+  --color-bg: rgb(16 16 16);
+  --color-text: antiquewhite;
+  --color-black: #000;
+}
+
 html {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 * {
@@ -13,4 +20,37 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: var(--color-bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  padding: 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+a::before {
+  content: "DOWNLOAD";
+  font-weight: 700;
+  color: var(--color-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-text);
+  transform: translateY(-100%);
+  transition: all 1s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover::before {
+  transform: translateY(0);
 }
